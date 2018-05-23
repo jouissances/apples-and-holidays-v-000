@@ -92,7 +92,9 @@ def all_holidays_with_bbq(holiday_hash)
   holiday_hash.map { |season, holidays|
     holidays.select{ |key, value|
       value.include?("BBQ")
-    }.keys
+    }.keys.reject { |array|
+      array.empty?
+    }
   }
 end
 
